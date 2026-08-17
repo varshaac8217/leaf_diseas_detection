@@ -5,11 +5,11 @@ import gdown
 import os
 
 file_id="1fgYUfaLJl-CEnYQoF5iGr-3POxq3k9qu"
-url='https://drive.google.com/file/d/1fgYUfaLJl-CEnYQoF5iGr-3POxq3k9qu'
+id='https://drive.google.com/file/d/1fgYUfaLJl-CEnYQoF5iGr-3POxq3k9qu'
 model_path="trained_plant_disease_model.keras"
 if not os.path.exists(model_path):
     st.warning("Downloading model from Google Drive...")
-    gdown.download(url, model_path, quiet=False,fuzzy=True)
+    gdown.download(id,model_path, quiet=False,fuzzy=True)
 
 
 model_path = "trained_plant_disease_model.keras"
