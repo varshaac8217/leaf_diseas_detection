@@ -1,15 +1,16 @@
 import streamlit as st
 import tensorflow as tf
-import numpy as np
+import numpy as np 
 import gdown
 import os
 
 file_id="1fgYUfaLJl-CEnYQoF5iGr-3POxq3k9qu"
-id='https://drive.google.com/file/d/1fgYUfaLJl-CEnYQoF5iGr-3POxq3k9qu'
+url='https://drive.google.com/file/d/1fgYUfaLJl-CEnYQoF5iGr-3POxq3k9qu'
 model_path="trained_plant_disease_model.keras"
+
 if not os.path.exists(model_path):
     st.warning("Downloading model from Google Drive...")
-    gdown.download(id,model_path, quiet=False,fuzzy=True)
+    gdown.download(url, model_path, quiet=False)
 
 
 model_path = "trained_plant_disease_model.keras"
@@ -43,7 +44,7 @@ elif(app_mode=="DISEASE RECOGNITION"):
     st.header("Plant Disease Detection System for Sustainable Agriculture")
     test_image = st.file_uploader("Choose an Image:")
     if(st.button("Show Image")):
-        st.image(test_image,width=4,use_container_width=True)
+        st.image(test_image,width=4,use_column_width=True)
     #Predict button
     if(st.button("Predict")):
         st.snow()
